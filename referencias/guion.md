@@ -154,7 +154,7 @@ entregues uno solo.
 |---|---|---|
 | Lina, colombiana cálida | `yfUfwZTRubVrsUZWqzwp` | La voz de la marca: narradora y mascota |
 | Voz de hombre para anuncios | `245Mc01N5He6XcoEmywB` | Locutor de anuncios; la eligió el usuario el 10 de noviembre de 2026. En `marca.json` es `voces.locutor` |
-| Voz de mujer para anuncios | `DknlTc4Dy7F15e3sx4RR` | Locutora de anuncios; la dio el usuario el mismo día. En `marca.json` es `voces.locutora` |
+| Voz de mujer para anuncios | `UNIruiz09F4kWYjRpOvy` | Locutora de anuncios; la dio el usuario el mismo día. En `marca.json` es `voces.locutora` |
 | Maria, colombiana joven | `scn1gPWkdVd8FhODJoei` | Segundo personaje en los diálogos |
 | Andrea HC, colombiana | `MGYo7RNNx4bZenYcO0Xl` | Alternativa |
 
