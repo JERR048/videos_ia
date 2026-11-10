@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Anton&family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Anton&family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=VT323&display=swap">
 <style>
 :root{--primario:#5BB04B;--fondo:#EEF6EC}
 html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--fondo);font-family:Inter,'Segoe UI',Arial,sans-serif}
@@ -52,10 +52,10 @@ html.v #cap.karaoke{top:1250px;left:50px;right:50px;font-size:84px;line-height:1
 #cap.pastilla i{font:700 44px/1.2 Montserrat,Inter,sans-serif;font-style:normal;color:#fff;background:#0A0C12;border-radius:14px;padding:10px 24px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 html.v #cap.pastilla{top:1390px;left:60px;right:60px}
 html.v #cap.pastilla i{font-size:46px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-#cap.caja{top:740px;left:300px;right:300px;height:210px;text-align:left;white-space:normal;background:#0B0B14;border:6px solid #fff;box-shadow:0 0 0 6px #0B0B14;padding:22px 28px;box-sizing:border-box;font:700 40px/1.3 'Pixelify Sans',monospace;color:#fff;letter-spacing:0}
+#cap.caja{top:740px;left:300px;right:300px;height:210px;text-align:left;white-space:normal;background:#0B0B14;border:6px solid #fff;box-shadow:0 0 0 6px #0B0B14;padding:22px 28px;box-sizing:border-box;font:400 52px/1.12 'VT323','Pixelify Sans',monospace;color:#fff;letter-spacing:.01em;font-variant-ligatures:none}
 #cap.caja u{display:block;text-decoration:none;font:400 22px/1 'Press Start 2P',monospace;color:var(--acento);margin-bottom:16px;text-transform:uppercase}
 #cap.caja b{background:none;color:#FFC83D;font:inherit;padding:0;margin:0;box-shadow:none;border-radius:0}
-html.v #cap.caja{top:1190px;left:44px;right:44px;height:250px;font-size:46px;line-height:1.3}
+html.v #cap.caja{top:1190px;left:44px;right:44px;height:250px;font-size:60px;line-height:1.12}
 html.v #cap.caja b{font-size:inherit;padding:0}
 /* ── Tarjetas de dato ── */
 #fx{position:absolute;inset:0;pointer-events:none}
@@ -591,7 +591,7 @@ const ctx = { MARCA, W, H, VERT, THREE, scene, cam, TL, SC, s, e, c, cl, lerp, e
   crearRobot, crearCanal, crearChat, crearTelefono, crearPanelUI, crearPortatil, crearPersona, crearLuna, ambiente, tono, mostrar, tarjeta, verTarjeta,
   COLOR_CANAL, glifoCanal, fondoCanal, redondo, setKF: k => { for (let i = 0; i + 1 < k.length; i++) { const d = k[i + 1][0] - k[i][0]; if (d > 0 && d < .05) { /* corte de cámara: se deja justo antes del primer cuadro (1/30 s) que cae en la segunda llave o después, para que ningún cuadro quede dentro */ const fb = Math.ceil(k[i + 1][0] * 30 - 1e-6) / 30; k[i][0] = fb - .001; k[i + 1][0] = fb - .0002; } } KF = k; window.__KF = k; }, letraPequena: x => { $('letra').textContent = x; } };
 await document.fonts.ready;
-await Promise.all(['800 46px Montserrat', '900 84px Montserrat', '700 30px Inter', '500 30px Inter', '600 24px Inter', '800 30px Inter', '400 100px Anton', '700 40px "Pixelify Sans"', '400 22px "Press Start 2P"'].map(f => document.fonts.load(f)));
+await Promise.all(['800 46px Montserrat', '900 84px Montserrat', '700 30px Inter', '500 30px Inter', '600 24px Inter', '800 30px Inter', '400 100px Anton', '700 40px "Pixelify Sans"', '400 22px "Press Start 2P"', '400 60px VT323'].map(f => document.fonts.load(f)));
 const M = { ui, PRIM, FRANJA, lienzo, renderer, pixel: 0 };
 const FX = instalar(ctx, M);
 const mod = await import(`./anuncio-${AD}.js`);

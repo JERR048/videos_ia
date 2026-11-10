@@ -11,9 +11,26 @@ cámara y qué aparece en pantalla.
 | Responder dudas de compra o contar un resultado | Diálogo con mascota | 45–60 s | `anuncio-dialogov.js` |
 | Enseñar un concepto o una regla con un ejemplo | Presentador que explica | 45–75 s | `anuncio-presentav.js` |
 | Explicar cómo funciona algo grande o que no se ve | Mundo en miniatura | 60–130 s | `anuncio-mundov.js` |
-| Explicar un proceso por pasos | Videojuego | 30–45 s | `anuncio-juegov.js` |
+| Explicar un proceso por pasos | Videojuego | 20–45 s | `anuncio-juegov.js` |
+| Enseñar una regla o un concepto, sin personas | Mascota que explica | 20–40 s | `anuncio-robotv.js` |
 | Contar una anécdota o una comparación con remate | Cuento con dibujos | 55–70 s | `anuncio-cuentov.js` |
 | Mostrar una pantalla real con una persona real | Persona a cámara | 30–60 s | No se anima: hay que grabar |
+
+## Preferencias del dueño de esta habilidad (10 de noviembre de 2026)
+
+Mandan sobre la tabla. Si otra persona usa esta habilidad, puede ignorar esta sección.
+
+- **Nunca muñecos humanos en 3D.** Vio el diálogo y el presentador con el personaje humano del kit
+  (`k.crearPersonaje`) y pidió no hacerlos más. Eso deja fuera esos dos formatos tal como están en los ejemplos.
+  - El cliente y el equipo se muestran con objetos: celulares, globos de chat, portátiles con el panel, íconos,
+    iniciales en un círculo.
+  - Un diálogo o una explicación se pueden hacer con la mascota sola como presentadora (`anuncio-robotv.js`).
+  - Las personas dibujadas en 2D del cuento sí valen: las pidió por nombre («el de dibujos»).
+  - Por prudencia, tampoco figuras pequeñas en 3D (`k.crearMultitud`, `k.crearPersona`) mientras no diga otra cosa.
+- **Estilos que quiere:** videojuego, cuento con dibujos y 3D (mundo en miniatura, o la mascota con objetos).
+- **Alternar la voz de hombre y la de mujer** entre un video y otro (`locutor` y `locutora`).
+- **Cada videojuego se ve distinto:** plataformas, tablero de misión, pelea de jefe, portales. No repetir el mismo
+  nivel con otro texto.
 
 ## Tres preguntas que deciden
 
@@ -69,6 +86,8 @@ cierre. Propón tú el formato con la tabla y dile por qué.
 
 ![Ocho cuadros del diálogo de ejemplo](../ejemplos/dialogo.jpg)
 
+> El ejemplo usa el muñeco humano del kit. El dueño de esta habilidad pidió no usarlo: ver «Mascota que explica».
+
 - **Qué es:** una persona que representa al espectador pregunta; la mascota de la marca responde. Frases cortas.
 - **Estructura (45–60 s):**
   1. gancho: una pregunta con una cifra o un hecho concreto;
@@ -89,6 +108,8 @@ cierre. Propón tú el formato con la tabla y dile por qué.
 ## Presentador que explica
 
 ![Ocho cuadros del presentador de ejemplo](../ejemplos/presenta.jpg)
+
+> El ejemplo usa el muñeco humano del kit. El dueño de esta habilidad pidió no usarlo: ver «Mascota que explica».
 
 - **Qué es:** un solo personaje explica una regla o un término en 3 o 4 pasos.
 - **Estructura (45–75 s):**
@@ -131,6 +152,23 @@ cierre. Propón tú el formato con la tabla y dile por qué.
 - **Ojo con la escala:** desde arriba todo se ve pequeño en 1080 px de ancho. Lo que importa tiene que ocupar al
   menos un tercio del ancho en su momento.
 
+## Mascota que explica
+
+![Ocho cuadros del ejemplo de la mascota que explica](../ejemplos/robot.jpg)
+
+- **Qué es:** la mascota de la marca es la presentadora. Explica una regla en tres o cuatro pasos y se mueve entre
+  rincones de un mismo escenario oscuro con luces de color. No hay personas.
+- **Estructura (20–40 s):** gancho con una advertencia → la regla → cómo lo resuelve el producto → para qué sirve →
+  cierre con la marca.
+- **Guion:** `"subtitulos": "karaoke"`, `"tono": "neon"`, `"sinCierre": true`, `"musica": "pulso"`; una sola voz, y
+  la mascota mueve la boca con `k.boca(T, 'locutor')`.
+- **Imagen:**
+  - cada paso tiene su objeto grande: un reloj que cuenta atrás, una puerta que se cierra, una tarjeta con un sello,
+    un portátil con el panel, mensajes que vuelan a varios celulares;
+  - la luz cambia con el ánimo del paso: roja en el problema, verde en la solución;
+  - `k.planos` con un plano general y un primer plano de la mascota; corte al cambiar de escena.
+- Es el reemplazo del presentador humano y del diálogo cuando no se quieren muñecos.
+
 ## Videojuego
 
 ![Ocho cuadros del videojuego de ejemplo](../ejemplos/juego.jpg)
@@ -146,6 +184,16 @@ cierre. Propón tú el formato con la tabla y dile por qué.
   - marcador arriba (dos tarjetas `'pix'`: nivel y contador), rótulos «NIVEL n», «MISIÓN CUMPLIDA»;
   - la acción va entre y 420 y y 1150: abajo está el cuadro de diálogo.
 - **Sonido:** `moneda` al recoger, `nivel` al cambiar de nivel; el «bip» de cada palabra sale solo. Sin música.
+- **Cuatro variantes probadas** (10 de noviembre de 2026), para que dos videojuegos no se vean iguales:
+
+  | Variante | Cómo se ve | Sirve para |
+  |---|---|---|
+  | Plataformas | Vista lateral; la mascota salta de izquierda a derecha y cada nivel cambia de color | Un recorrido con varias paradas |
+  | Tablero de misión | Casillas vistas en diagonal, de día; la mascota avanza casilla a casilla | Una tarea con pasos que se preparan |
+  | Pelea de jefe | Arena oscura; el problema es un jefe con barra de vida que baja con cada nivel | Un problema que se resuelve por etapas |
+  | Portales | Tres puertas de colores con rótulo; algo vuela hasta la que corresponde | Repartir entre opciones |
+
+- En el ejemplo del kit los clientes son celulares con un globo de chat y el equipo es un portátil con el panel.
 
 ## Cuento con dibujos
 
@@ -187,6 +235,7 @@ cierre. Propón tú el formato con la tabla y dile por qué.
 | Presentador | `karaoke` | Uno por paso | `planos`, corte por paso | 1 | `pulso` | «¿Ya lo sabías?» |
 | Mundo | `pastilla` | `noche` | `setKF`, un vuelo | 1 | `pad` | Titular y logo |
 | Videojuego | `caja` | `neon` | Lateral, sigue a la mascota | 1 | No | «Misión cumplida» |
+| Mascota que explica | `karaoke` | `neon`, luz por paso | `planos`, corte por paso | 1 | `pulso` | Tarjeta con botón |
 | Cuento | `karaoke` | `cielo` → `noche` | `setKF`, deslizamientos | 1 | `pad` | Remate y logo |
 
 ## Prueba antes del video completo

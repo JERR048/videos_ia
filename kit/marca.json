@@ -23,7 +23,8 @@
     "velocidad": 1.08,
     "pronunciacion": {
       "www.tumarca.com": "triple doble ve punto tu marca punto com",
-      "IA": "inteligencia artificial"
+      "IA": "inteligencia artificial",
+      "panel": "panél"
     }
   },
   "cierre": {
@@ -70,12 +71,12 @@
     "locutor": {
       "id": "245Mc01N5He6XcoEmywB",
       "nombre": "es-CO-GonzaloNeural",
-      "rotulo": "Locutor"
+      "rotulo": "Robot"
     },
     "locutora": {
       "id": "UNIruiz09F4kWYjRpOvy",
       "nombre": "es-CO-SalomeNeural",
-      "rotulo": "Locutora"
+      "rotulo": "Robot"
     }
   }
 }

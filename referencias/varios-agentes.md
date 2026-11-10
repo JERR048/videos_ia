@@ -30,6 +30,11 @@ y las cinco pruebas de formato (10 de noviembre de 2026). Para un solo video cor
 - **GPU compartida:** cuatro constructores a la vez funcionan con un límite de 16 cuadros por corrida.
 - **Los revisores encuentran problemas reales en todos los videos:** paneos con cuadros vacíos, un cuadro dentro de un
   corte, etiquetas bajo los botones, parpadeos antes del cierre. El líder también revisa lo que hizo él.
+- **Diez constructores a la vez funcionaron** (10 de noviembre de 2026) con 12 cuadros por corrida y un render largo
+  al mismo tiempo: unos 25 minutos por video. Los arreglos comunes (una letra, el volumen) se aplican al motor
+  cuando todos acaban y se vuelve a armar todo.
+- **Di en el encargo cómo debe verse distinto cada video** del mismo formato: lugar, paleta, mecánica.
+- **Parte de un video terminado del mismo formato:** copiarlo y extenderlo rinde más que empezar de cero.
 - **No edites el motor mientras otros lo usan.** Los cambios del kit se hacen antes de repartir o cuando todos acaban.
 
 ## Encargo para un constructor

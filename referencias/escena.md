@@ -149,7 +149,8 @@ k.boton('www.tumarca.com', '', u)                             // botón; 'claro'
 
 - `k.pixelar(5)` una vez, fuera de `actualizar`: el 3D se renderiza con píxeles gordos. Con 4 casi no se nota y con 6
   se emborronan las caras.
-- El subtítulo `caja` hace de cuadro de diálogo, con el `rotulo` de la voz como nombre.
+- El subtítulo `caja` hace de cuadro de diálogo, con el `rotulo` de la voz como nombre. Usa la letra VT323: con
+  Pixelify Sans el «2» se leía «8» y la «c», «o».
 - El marcador y los rótulos de nivel son tarjetas `'pix'`.
 - En modo píxel no hay resplandor.
 
@@ -166,8 +167,9 @@ Se copian del archivo de ejemplo cuando hagan falta. Si se usan en un tercer vid
 | Pieza | Dónde |
 |---|---|
 | Pared, puerta con bisagra, ventana con cielo, sofá, alfombra, mesita con lámpara, melena | `anuncio-presentav.js` |
-| Nivel de plataformas con ladrillos, aviso «!» que pasa a «✓», globo de chat, portátil sencillo, bandera, camino a saltos | `anuncio-juegov.js` |
-| Tienda con toldo y letrero de canvas, globos de chat con puntitos que pasan a ✓ y vuelan en arco, faroles, paso de cebra, niebla según la altura de la cámara | `anuncio-mundov.js` |
+| Nivel de plataformas con ladrillos, celular de pie con globo de chat, bloque de menú que se golpea desde abajo, tienda con persianas, cartel con reloj, luna, portátil con panel, bandera que sube | `anuncio-juegov.js` |
+| Puerta con bisagra y marco de neón, reloj de segmentos, plantilla con sello, celular sencillo, burbuja con estela, cursor sobre la pantalla del portátil | `anuncio-robotv.js` |
+| Tienda con toldo y letrero de canvas, ventana con halo, globo de chat de cuatro estados, menú flotante, cartel con reloj, paso de noche a día, faroles, paso de cebra | `anuncio-mundov.js` |
 | Personaje 2D de dibujo (`dibujo()`: cartel que mira a cámara, con expresiones), contorno de tinta (`entintar()` por casco invertido y `placa()` para cosas planas), `cartel()` y globos, `halo()`, `encuadre()` | `anuncio-cuentov.js` |
 | Router, carrito, calendario, formulario, montones de documentos | `ejemplos/anuncio-03.js`, `anuncio-04.js` |
 

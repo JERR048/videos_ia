@@ -6,7 +6,7 @@ con three.js en Chrome sin ventana y ffmpeg. No usa un generador de video.
 
 ## Qué hace
 
-Seis formatos, cada uno con su receta y un ejemplo que corre:
+Siete formatos, cada uno con su receta y un ejemplo que corre:
 
 | Formato | Para qué | Dura |
 |---|---|---|
@@ -14,12 +14,14 @@ Seis formatos, cada uno con su receta y un ejemplo que corre:
 | Diálogo con mascota | Responder dudas de compra, contar un resultado | 45–60 s |
 | Presentador que explica | Enseñar un concepto con un ejemplo | 45–75 s |
 | Mundo en miniatura | Explicar cómo funciona algo que no se ve | 60–130 s |
-| Videojuego | Explicar un proceso por pasos | 30–45 s |
+| Videojuego | Explicar un proceso por pasos | 20–45 s |
+| Mascota que explica | Enseñar una regla, sin personas | 20–40 s |
 | Cuento con dibujos | Contar una anécdota o una comparación con remate | 55–70 s |
 
 ![Diálogo con mascota](ejemplos/dialogo.jpg)
 ![Mundo en miniatura](ejemplos/mundo.jpg)
 ![Cuento con dibujos](ejemplos/cuento.jpg)
+![Mascota que explica](ejemplos/robot.jpg)
 
 Salen en vertical 1080×1920 (Reels, TikTok, Shorts, estados de WhatsApp) y el anuncio de producto también en
 horizontal 1920×1080. Cada archivo queda por debajo de 15 MB.

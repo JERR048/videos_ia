@@ -1,0 +1,78 @@
+{
+  "titulo": "La ventana de 24 horas",
+  "archivo": "tumarca-robot",
+  "formato": "robot",
+  "subtitulos": "karaoke",
+  "tono": "neon",
+  "sinCierre": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "habla": "locutor",
+      "antes": 0.15,
+      "despues": 0.15,
+      "trozos": [
+        "Si tu cliente",
+        "no te escribe",
+        [
+          "en *24 horas*,",
+          "en veinticuatro horas,"
+        ],
+        "WhatsApp",
+        "te *cierra*",
+        "la puerta."
+      ]
+    },
+    {
+      "id": "regla",
+      "habla": "locutor",
+      "antes": 0.1,
+      "despues": 0.15,
+      "trozos": [
+        "Después,",
+        "solo puedes",
+        "escribirle",
+        "con una",
+        "*plantilla*",
+        "aprobada",
+        "por *Meta*."
+      ]
+    },
+    {
+      "id": "con",
+      "habla": "locutor",
+      "antes": 0.1,
+      "despues": 0.15,
+      "trozos": [
+        "Con *Tu Marca*,",
+        "la creas",
+        "y la envías",
+        "desde tu",
+        "*panel*:"
+      ]
+    },
+    {
+      "id": "usos",
+      "habla": "locutor",
+      "antes": 0.1,
+      "despues": 0.25,
+      "trozos": [
+        "*recordatorios*,",
+        "*avisos*",
+        "y *promociones*."
+      ]
+    },
+    {
+      "id": "cta",
+      "habla": "locutor",
+      "antes": 0.1,
+      "despues": 1.5,
+      "trozos": [
+        "*Tu Marca*.",
+        "Retoma la",
+        "*conversación*."
+      ]
+    }
+  ],
+  "musica": "pulso"
+}

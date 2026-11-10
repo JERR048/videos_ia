@@ -1,16 +1,15 @@
 {
-  "titulo": "Prueba 3 · Mundo en miniatura",
-  "archivo": "prueba-3-mundo",
+  "titulo": "Son las 9 de la noche",
+  "archivo": "tumarca-mundo",
   "formato": "mundo",
   "subtitulos": "pastilla",
   "tono": "noche",
   "sinCierre": true,
-  "musica": "pad",
   "escenas": [
     {
       "id": "noche",
-      "habla": "narra",
-      "antes": 0.2,
+      "habla": "locutor",
+      "antes": 0.15,
       "despues": 0.2,
       "trozos": [
         [
@@ -22,7 +21,7 @@
     },
     {
       "id": "siguen",
-      "habla": "narra",
+      "habla": "locutor",
       "antes": 0.1,
       "despues": 0.3,
       "trozos": [
@@ -32,24 +31,48 @@
     },
     {
       "id": "robot",
-      "habla": "narra",
+      "habla": "locutor",
+      "antes": 0.1,
+      "despues": 0.25,
+      "trozos": [
+        "Con *Tu Marca*,",
+        "un robot los saluda,",
+        "les muestra el *menú*",
+        "y les pide sus datos."
+      ]
+    },
+    {
+      "id": "horario",
+      "habla": "locutor",
+      "antes": 0.1,
+      "despues": 0.25,
+      "trozos": [
+        "Si necesitan a una persona,",
+        "les avisa tu *horario*."
+      ]
+    },
+    {
+      "id": "manana",
+      "habla": "locutor",
       "antes": 0.1,
       "despues": 0.3,
       "trozos": [
-        "Con *Tu Marca*,",
-        "un robot los saluda",
-        "y les *responde*."
+        "Y en la mañana,",
+        "tu equipo ya tiene",
+        "*sus datos*."
       ]
     },
     {
       "id": "lema",
-      "habla": "narra",
+      "habla": "locutor",
       "antes": 0.1,
-      "despues": 1.3,
+      "despues": 1.5,
       "trozos": [
+        "*Tu Marca*.",
         "Tu WhatsApp responde",
         "aunque tú *no estés*."
       ]
     }
-  ]
+  ],
+  "musica": "pad"
 }

@@ -114,6 +114,9 @@ entregues uno solo.
 - Cada trozo es lo que sale junto en pantalla: de 1 a 4 palabras (hasta 8 en `caja` y `pastilla`).
 - Como mucho una `*palabra*` resaltada por trozo.
 - `["lo que se lee", "lo que se dice"]` sirve para números, horas y siglas.
+- **Un número entre los trozos es una pausa en segundos:** `["¿Cómo atendiste", "a tu cliente?", 0.5, "Pregúntale,"]`.
+  La escena se dice en dos tramos con ese silencio en medio, y los índices de `c('escena', n)` no cambian. Sirve
+  cuando una pregunta llega pegada a la frase siguiente.
 - La voz se pide por escena: si corriges una escena, solo esa vuelve a gastar caracteres.
 - **En `karaoke`, un trozo de más de 16 letras se parte en dos renglones.** Divídelo en dos trozos. Repartir de otra
   forma los trozos de una escena no cambia su texto, así que no vuelve a gastar voz; solo hay que revisar los índices
@@ -145,7 +148,12 @@ entregues uno solo.
 - `rotulo` es el nombre que sale en el cuadro de diálogo del formato videojuego.
 - `acento` es el color de la palabra resaltada en los subtítulos sobre fondo oscuro; si falta, se usa `primario`.
 - `pronunciacion` cambia lo que dice la voz sin cambiar lo que se lee. Una marca que se dice distinto de como se
-  escribe va ahí: `"WhatMas": "Guatmás"`.
+  escribe va ahí.
+- **La tilde decide dónde cae el acento.** WhatMas debe sonar «Wátmas», con el acento en la primera sílaba:
+  `"WhatMas": "Guátmas"`. Con «Guatmás» sonaba «whatmás» y el usuario lo corrigió el 10 de noviembre de 2026.
+- **«panel»** se marcó como mal pronunciada en una revisión: `"panel": "panél"` fuerza el acento al final.
+- La transcripción con Whisper no distingue dónde cae el acento: solo una persona lo oye. Después de cambiar una
+  pronunciación, pídele al usuario que escuche esa palabra.
 - Los datos del cierre los confirma el usuario.
 
 **Voces de ElevenLabs del dueño de esta habilidad** (noviembre de 2026):
@@ -160,8 +168,8 @@ entregues uno solo.
 
 - Para un diálogo se necesitan dos voces distintas: el locutor con la locutora, o Lina con Maria.
 - Las dos voces de anuncios no aparecen en la lista de voces de la cuenta, pero funcionan al pedirlas por su id.
-- Lina sigue siendo la voz por defecto de la marca hasta que el usuario diga otra cosa. Antes de un anuncio nuevo,
-  pregúntale cuál voz quiere: Lina, la locutora o el locutor.
+- **Desde el 10 de noviembre de 2026 los videos nuevos alternan locutor y locutora** (pedido del usuario), y los 16
+  anuncios de producto de WhatMas se rehicieron con la locutora. Lina queda como voz anterior.
 - Una voz sin `id` sale con el respaldo gratis (`edge-tts`), aunque el motor sea ElevenLabs.
 - Para usar al locutor en una escena: `"habla": "locutor"`. Para que sea la voz de todo un anuncio, pon su id en
   `marca.json → voz.id`.

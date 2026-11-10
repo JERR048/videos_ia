@@ -1,6 +1,6 @@
 {
-  "titulo": "Prueba 4 · Videojuego",
-  "archivo": "prueba-4-videojuego",
+  "titulo": "Atender tu WhatsApp es un videojuego",
+  "archivo": "tumarca-juego",
   "formato": "videojuego",
   "subtitulos": "caja",
   "tono": "neon",
@@ -8,8 +8,8 @@
   "escenas": [
     {
       "id": "intro",
-      "habla": "narra",
-      "antes": 0.2,
+      "habla": "locutora",
+      "antes": 0.15,
       "despues": 0.2,
       "trozos": [
         "Atender tu *WhatsApp* es un *videojuego*."
@@ -17,35 +17,59 @@
     },
     {
       "id": "n1",
-      "habla": "narra",
-      "antes": 0.15,
-      "despues": 0.25,
+      "habla": "locutora",
+      "antes": 0.12,
+      "despues": 0.2,
       "trozos": [
         [
-          "*Nivel 1*: el robot *saluda* y pide los datos.",
-          "Nivel uno: el robot saluda y pide los datos."
+          "*Nivel 1*: el robot *saluda* a cada cliente.",
+          "Nivel uno: el robot saluda a cada cliente."
         ]
       ]
     },
     {
       "id": "n2",
-      "habla": "narra",
-      "antes": 0.15,
-      "despues": 0.25,
+      "habla": "locutora",
+      "antes": 0.12,
+      "despues": 0.2,
       "trozos": [
         [
-          "*Nivel 2*: pasa el chat a tu *equipo*.",
-          "Nivel dos: pasa el chat a tu equipo."
+          "*Nivel 2*: le muestra el *menú* y le pide sus *datos*.",
+          "Nivel dos: le muestra el menú y le pide sus datos."
+        ]
+      ]
+    },
+    {
+      "id": "n3",
+      "habla": "locutora",
+      "antes": 0.12,
+      "despues": 0.2,
+      "trozos": [
+        [
+          "*Nivel 3*: si ya cerraste, le avisa tu *horario*.",
+          "Nivel tres: si ya cerraste, le avisa tu horario."
+        ]
+      ]
+    },
+    {
+      "id": "n4",
+      "habla": "locutora",
+      "antes": 0.12,
+      "despues": 0.2,
+      "trozos": [
+        [
+          "*Nivel 4*: pasa el chat a tu *equipo*.",
+          "Nivel cuatro: pasa el chat a tu equipo."
         ]
       ]
     },
     {
       "id": "fin",
-      "habla": "narra",
+      "habla": "locutora",
       "antes": 0.15,
-      "despues": 1.3,
+      "despues": 1.5,
       "trozos": [
-        "Y tu equipo sigue desde el *panel*."
+        "*Tu Marca*. Lleva tu atención al *siguiente nivel*."
       ]
     }
   ]

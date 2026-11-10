@@ -17,6 +17,7 @@ Cada fila costó tiempo una vez. Búscala aquí antes de depurar.
 | Texto del chat diminuto | El celular está lejos | Escala 0,58 a 9–13 m; el chat ya trae zoom 1,3 |
 | Algo «salta» al revisar | Estado guardado entre cuadros | Todo debe calcularse a partir de `T` |
 | Un personaje 2D se ve de canto | El cartel no gira hacia la cámara | Gíralo en Y hacia la cámara en cada cuadro |
+| En el cuadro de diálogo de videojuego el «2» parece «8» y la «c», «o» | La letra Pixelify Sans es ambigua a ese tamaño | El motor ya usa VT323 en el cuadro de diálogo; para rótulos cortos, `Press Start 2P` (clase `pix`) |
 | Una letra con tilde se encoge en el modo videojuego | La fuente pixelada no trae ese carácter | Usa mayúscula sin tilde con la tilde dibujada, o cambia la palabra |
 | Los discos de canal salen girados | La textura del cilindro | Usa `crearCanal`, que ya trae la corrección |
 | El texto del panel invade la zona segura del vertical | El panel es apaisado | Encuadre más amplio, paneo lento o una versión angosta del contenido |
@@ -31,6 +32,7 @@ Cada fila costó tiempo una vez. Búscala aquí antes de depurar.
 | `guion.py` no alinea (N/M) | Signos o números que la voz lee distinto | Usa `["se lee", "se dice"]` en ese trozo |
 | La voz dice mal la marca | La lee como está escrita | `marca.json → voz.pronunciacion`; comprueba con Whisper |
 | Tras cambiar la voz, algo queda cortado al final de una escena | La voz nueva es más rápida | Alarga `despues` de esa escena hasta recuperar el margen |
+| Un video sale más bajo que otro (−18 LUFS) | Cada voz de ElevenLabs tiene su volumen; la de hombre salía más baja | `sonido.py` ya lleva la mezcla a −16 LUFS; vuelve a correr `armar.sh` |
 | El pico de audio pasa de −1 dBTP en el MP4 | Recomprimir el audio AAC una segunda vez puede subir el pico más de 3 dB | `armar.sh` ya copia el audio del render sin recomprimirlo y `sonido.py` trae un limitador suave; si mezclas a mano, deja 3 dB de margen |
 | Silencio de más de 0,6 s en medio | Pausas `antes` + `despues` largas entre escenas | Bájalas a 0,1–0,2 s |
 | faster-whisper falla con `metadata_errors` | El PyAV instalado no es compatible | Pásale el audio como arreglo de numpy, leído con ffmpeg |

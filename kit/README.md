@@ -56,7 +56,8 @@ node render.mjs XXv sonidos        # (a mano) anota los efectos; luego: python s
 | `dialogo` | Diálogo con mascota | `guiones/dialogo.json`, `anuncio-dialogov.js` |
 | `presenta` | Presentador que explica | `guiones/presenta.json`, `anuncio-presentav.js` |
 | `mundo` | Mundo en miniatura | `guiones/mundo.json`, `anuncio-mundov.js` |
-| `juego` | Videojuego | `guiones/juego.json`, `anuncio-juegov.js` |
+| `juego` | Videojuego de plataformas, sin muñecos humanos | `guiones/juego.json`, `anuncio-juegov.js` |
+| `robot` | Mascota que explica | `guiones/robot.json`, `anuncio-robotv.js` |
 | `cuento` | Cuento con dibujos | `guiones/cuento.json`, `anuncio-cuentov.js` |
 
 Para probar uno: `VOZ_MOTOR=edge python guion.py dialogo && bash fotos.sh dialogov 0.5 3 6 9 12`.

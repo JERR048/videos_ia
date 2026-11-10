@@ -196,27 +196,38 @@ async def armar(ad):
     guion, lista_escenas = cargar(ad)
     npal = 0
     for nombre, pre, post, trozos, habla in lista_escenas:
-        caps = [x[0] if isinstance(x, tuple) else x for x in trozos]
-        voces = [voz_de(x[1] if isinstance(x, tuple) else x) for x in trozos]
-        mp3 = os.path.join(out, nombre + ".mp3")
         cfg = voz_cfg(habla)
-        marcas = await decir(" ".join(voces), mp3, cfg)
-        dur = duracion(mp3)
-        inicios, ok, total, tw = alinear(voces, marcas)
-        npal += total
-        print("%s %-12s %5.2fs  alineadas %d/%d%s" % (ad, nombre, dur, ok, total, ("  [%s, %s]" % (habla, motor_de(cfg))) if habla else ""))
-        v0 = t + pre
-        chunks = []
-        for i, (cap, i0) in enumerate(zip(caps, inicios)):
-            fin = inicios[i + 1] if i + 1 < len(inicios) else dur
-            w = tiempos_de_palabras(cap, tw[i], i0, max(fin, i0 + .05))
-            chunks.append({"cap": cap, "t0": round(v0 + i0, 3), "w": [round(v0 + x, 3) for x in w]})
-        esc = {"id": nombre, "start": round(t, 3), "voz": round(v0, 3), "vozFin": round(v0 + dur, 3), "end": round(v0 + dur + post, 3), "chunks": chunks}
+        # Un número entre los trozos es una pausa (segundos): la escena se dice por tramos, con ese silencio en medio.
+        tramos, pausas = [[]], []
+        for x in trozos:
+            if isinstance(x, (int, float)):
+                pausas.append(float(x))
+                tramos.append([])
+            else:
+                tramos[-1].append(x)
+        inicio_escena, v0, cur, chunks = t, t + pre, t + pre, []
+        for j, tramo in enumerate(tramos):
+            caps = [x[0] if isinstance(x, tuple) else x for x in tramo]
+            voces = [voz_de(x[1] if isinstance(x, tuple) else x) for x in tramo]
+            mp3 = os.path.join(out, nombre + (".mp3" if j == 0 else "-%d.mp3" % j))
+            marcas = await decir(" ".join(voces), mp3, cfg)
+            dur = duracion(mp3)
+            inicios, ok, total, tw = alinear(voces, marcas)
+            npal += total
+            ultimo = j == len(tramos) - 1
+            print("%s %-12s %5.2fs  alineadas %d/%d%s%s" % (ad, nombre if j == 0 else "%s·%d" % (nombre, j + 1), dur, ok, total,
+                  ("  [%s, %s]" % (habla, motor_de(cfg))) if habla else "", "" if ultimo else "  + pausa %.2fs" % pausas[j]))
+            for i, (cap, i0) in enumerate(zip(caps, inicios)):
+                fin = inicios[i + 1] if i + 1 < len(inicios) else dur
+                w = tiempos_de_palabras(cap, tw[i], i0, max(fin, i0 + .05))
+                chunks.append({"cap": cap, "t0": round(cur + i0, 3), "w": [round(cur + x, 3) for x in w]})
+            lista.append((mp3, pre if j == 0 else 0.0, dur, post if ultimo else pausas[j]))
+            cur += dur + (0.0 if ultimo else pausas[j])
+        esc = {"id": nombre, "start": round(inicio_escena, 3), "voz": round(v0, 3), "vozFin": round(cur, 3), "end": round(cur + post, 3), "chunks": chunks}
         if habla:
             esc["habla"] = habla
         escenas.append(esc)
-        lista.append((mp3, pre, dur, post))
-        t = v0 + dur + post
+        t = cur + post
     tl = {"ad": ad, "total": round(t, 3), "formato": guion.get("formato", "anuncio"), "subtitulos": guion.get("subtitulos", "arriba"), "escenas": escenas}
     if guion.get("tono"):
         tl["tono"] = guion["tono"]
