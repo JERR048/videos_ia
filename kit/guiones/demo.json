@@ -1,0 +1,44 @@
+{
+  "titulo": "Demo: atención a cualquier hora",
+  "archivo": "tumarca-demo",
+  "escenas": [
+    {
+      "id": "gancho",
+      "antes": 0.5,
+      "despues": 0.4,
+      "trozos": [
+        "Tus clientes",
+        "te escriben",
+        "a *cualquier hora*…"
+      ]
+    },
+    {
+      "id": "robot",
+      "trozos": [
+        "Con *Tu Marca*,",
+        "un *robot*",
+        "los saluda",
+        "y les responde",
+        "*al instante*."
+      ]
+    },
+    {
+      "id": "panel",
+      "trozos": [
+        "Y tu equipo",
+        "lo ve todo",
+        "en *un solo panel*."
+      ]
+    },
+    {
+      "id": "lema",
+      "antes": 0.4,
+      "despues": 0.5,
+      "trozos": [
+        "*Tu Marca*.",
+        "Atención",
+        "*sin esperas*."
+      ]
+    }
+  ]
+}

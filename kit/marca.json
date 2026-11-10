@@ -1,0 +1,81 @@
+{
+  "nombre": "Tu Marca",
+  "logo": "img/logo.png",
+  "colores": {
+    "primario": "#2F7BE5",
+    "fondo": "#EEF3F8",
+    "franja": [
+      "#2F7BE5",
+      "#18B4A6",
+      "#F2A93B",
+      "#E2566E"
+    ],
+    "acento": "#7DB6FF"
+  },
+  "voz": {
+    "motor": "elevenlabs",
+    "id": "yfUfwZTRubVrsUZWqzwp",
+    "modelo": "eleven_multilingual_v2",
+    "estabilidad": 0.5,
+    "similitud": 0.75,
+    "estilo": 0.0,
+    "nombre": "es-CO-SalomeNeural",
+    "velocidad": 1.08,
+    "pronunciacion": {
+      "www.tumarca.com": "triple doble ve punto tu marca punto com",
+      "IA": "inteligencia artificial"
+    }
+  },
+  "cierre": {
+    "dice": [
+      "Conoce más",
+      "en *www.tumarca.com*."
+    ],
+    "lineas": [
+      "Conoce más en",
+      "www.tumarca.com"
+    ],
+    "datos": [
+      {
+        "icono": "telefono",
+        "texto": "+57 300 000 0000"
+      }
+    ]
+  },
+  "panel": {
+    "iniciales": "TM",
+    "menu": [
+      "INICIO",
+      "CONTACTOS",
+      "CHATS",
+      "CAMPAÑAS",
+      "TICKETS",
+      "ROBOTS",
+      "REPORTES",
+      "CONFIGURACIÓN"
+    ]
+  },
+  "voces": {
+    "robot": {
+      "rotulo": "Robot"
+    },
+    "narra": {
+      "rotulo": "Tu Marca"
+    },
+    "ana": {
+      "id": "scn1gPWkdVd8FhODJoei",
+      "nombre": "es-CO-SalomeNeural",
+      "rotulo": "Ana"
+    },
+    "locutor": {
+      "id": "245Mc01N5He6XcoEmywB",
+      "nombre": "es-CO-GonzaloNeural",
+      "rotulo": "Locutor"
+    },
+    "locutora": {
+      "id": "DknlTc4Dy7F15e3sx4RR",
+      "nombre": "es-CO-SalomeNeural",
+      "rotulo": "Locutora"
+    }
+  }
+}

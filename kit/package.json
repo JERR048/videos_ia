@@ -1,0 +1,10 @@
+{
+  "name": "kit-video-3d",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "puppeteer-core": "23.11.1",
+    "three": "0.169.0"
+  }
+}

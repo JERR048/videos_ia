@@ -1,0 +1,9 @@
+node_modules/
+build/
+timeline-*.json
+__pycache__/
+*.mp4
+*.wav
+*.mp3
+.env
+*.local.json

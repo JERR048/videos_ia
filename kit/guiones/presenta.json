@@ -1,0 +1,61 @@
+{
+  "titulo": "Prueba 2 · Presentador que explica",
+  "archivo": "prueba-2-presentador",
+  "formato": "presentador",
+  "subtitulos": "karaoke",
+  "tono": "calido",
+  "sinCierre": true,
+  "musica": "pulso",
+  "escenas": [
+    {
+      "id": "gancho",
+      "habla": "narra",
+      "antes": 0.15,
+      "despues": 0.15,
+      "trozos": [
+        "Si tu cliente",
+        "no te escribe",
+        [
+          "en *24 horas*,",
+          "en veinticuatro horas,"
+        ],
+        "WhatsApp",
+        "te *cierra* la puerta."
+      ]
+    },
+    {
+      "id": "regla",
+      "habla": "narra",
+      "antes": 0.1,
+      "despues": 0.15,
+      "trozos": [
+        "Después",
+        "solo puedes escribirle",
+        "con una *plantilla*",
+        "aprobada por *Meta*."
+      ]
+    },
+    {
+      "id": "solucion",
+      "habla": "narra",
+      "antes": 0.1,
+      "despues": 0.2,
+      "trozos": [
+        "Con *Tu Marca*",
+        "la envías",
+        "desde tu *panel*."
+      ]
+    },
+    {
+      "id": "cta",
+      "habla": "narra",
+      "antes": 0.1,
+      "despues": 1.2,
+      "trozos": [
+        "¿Ya lo *sabías*?",
+        "*Síguenos*",
+        "para más."
+      ]
+    }
+  ]
+}

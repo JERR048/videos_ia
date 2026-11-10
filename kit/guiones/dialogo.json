@@ -1,0 +1,73 @@
+{
+  "titulo": "Prueba 1 · Diálogo con mascota",
+  "archivo": "prueba-1-dialogo",
+  "formato": "dialogo",
+  "subtitulos": "karaoke",
+  "tono": "neon",
+  "sinCierre": true,
+  "escenas": [
+    {
+      "id": "gancho",
+      "habla": "ana",
+      "antes": 0.15,
+      "despues": 0.2,
+      "trozos": [
+        "Robot,",
+        "¿quién *respondió*",
+        "anoche",
+        [
+          "a las *9*?",
+          "a las nueve?"
+        ]
+      ]
+    },
+    {
+      "id": "yo",
+      "habla": "robot",
+      "antes": 0.1,
+      "despues": 0.25,
+      "trozos": [
+        "*Yo*.",
+        "Saludé,",
+        "pedí los datos",
+        "y avisé",
+        "tu *horario*."
+      ]
+    },
+    {
+      "id": "cuantos",
+      "habla": "ana",
+      "antes": 0.1,
+      "despues": 0.15,
+      "trozos": [
+        "¿Y *cuántos*",
+        "escribieron?"
+      ]
+    },
+    {
+      "id": "siete",
+      "habla": "robot",
+      "antes": 0.1,
+      "despues": 0.12,
+      "trozos": [
+        "*Siete*.",
+        "Y ya están",
+        "en tu *panel*."
+      ]
+    },
+    {
+      "id": "cta",
+      "habla": "robot",
+      "antes": 0.1,
+      "despues": 1.3,
+      "trozos": [
+        "*Tu Marca*.",
+        "Tu WhatsApp",
+        "*responde*",
+        "aunque tú",
+        "*no estés*."
+      ]
+    }
+  ],
+  "musica": "pulso"
+}

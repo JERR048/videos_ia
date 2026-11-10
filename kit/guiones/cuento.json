@@ -1,0 +1,70 @@
+{
+  "titulo": "Prueba 5 · Cuento con dibujos",
+  "archivo": "prueba-5-cuento",
+  "formato": "cuento",
+  "subtitulos": "karaoke",
+  "tono": "cielo",
+  "sinCierre": true,
+  "musica": "pad",
+  "escenas": [
+    {
+      "id": "cierras",
+      "habla": "narra",
+      "antes": 0.15,
+      "despues": 0.15,
+      "trozos": [
+        "Imagina que",
+        "cierras tu tienda",
+        [
+          "a las *6*.",
+          "a las seis."
+        ]
+      ]
+    },
+    {
+      "id": "tocan",
+      "habla": "narra",
+      "antes": 0.1,
+      "despues": 0.15,
+      "trozos": [
+        [
+          "A las *9*,",
+          "A las nueve,"
+        ],
+        "siete clientes",
+        "tocan la *puerta*."
+      ]
+    },
+    {
+      "id": "nadie",
+      "habla": "narra",
+      "antes": 0.15,
+      "despues": 0.3,
+      "trozos": [
+        "*Nadie* abre."
+      ]
+    },
+    {
+      "id": "asi",
+      "habla": "narra",
+      "antes": 0.1,
+      "despues": 0.2,
+      "trozos": [
+        "Así se ve",
+        "tu WhatsApp",
+        "sin un *robot*."
+      ]
+    },
+    {
+      "id": "con",
+      "habla": "narra",
+      "antes": 0.1,
+      "despues": 1.3,
+      "trozos": [
+        "Con *Tu Marca*,",
+        "un robot",
+        "*responde* por ti."
+      ]
+    }
+  ]
+}

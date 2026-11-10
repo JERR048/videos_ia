@@ -1,0 +1,55 @@
+{
+  "titulo": "Prueba 3 · Mundo en miniatura",
+  "archivo": "prueba-3-mundo",
+  "formato": "mundo",
+  "subtitulos": "pastilla",
+  "tono": "noche",
+  "sinCierre": true,
+  "musica": "pad",
+  "escenas": [
+    {
+      "id": "noche",
+      "habla": "narra",
+      "antes": 0.2,
+      "despues": 0.2,
+      "trozos": [
+        [
+          "Son las *9 de la noche*.",
+          "Son las nueve de la noche."
+        ],
+        "Tu negocio ya cerró,"
+      ]
+    },
+    {
+      "id": "siguen",
+      "habla": "narra",
+      "antes": 0.1,
+      "despues": 0.3,
+      "trozos": [
+        "pero tus clientes",
+        "*siguen escribiendo*."
+      ]
+    },
+    {
+      "id": "robot",
+      "habla": "narra",
+      "antes": 0.1,
+      "despues": 0.3,
+      "trozos": [
+        "Con *Tu Marca*,",
+        "un robot los saluda",
+        "y les *responde*."
+      ]
+    },
+    {
+      "id": "lema",
+      "habla": "narra",
+      "antes": 0.1,
+      "despues": 1.3,
+      "trozos": [
+        "Tu WhatsApp responde",
+        "aunque tú *no estés*."
+      ]
+    }
+  ]
+}
