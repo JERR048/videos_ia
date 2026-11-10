@@ -577,7 +577,7 @@ function subtitulo(t) {
         if (ESTILO === 'arriba') html = fmt(ch.cap);
         else if (ESTILO === 'pastilla') html = '<i>' + esc(ch.cap.replace(/\*/g, '')) + '</i>';
         else {
-          const w = ch.w || [], pal = palabras(ch.cap).map((p, j) => ({ r: p[0] === '\u0001', x: esc(p[0] === '\u0001' ? p.slice(1) : p), dicha: t >= (w[j] ?? ch.t0) - .04 }));
+          const w = ch.w || [], pal = palabras(ch.cap).map((p, j) => ({ r: p.includes('\u0001'), x: esc(p.replace('\u0001', '')), dicha: t >= (w[j] ?? ch.t0) - .04 }));
           if (ESTILO === 'caja') { html = `<u>${esc(rotulo(sc.habla))}</u>` + pal.filter(p => p.dicha).map(p => p.r ? `<b>${p.x}</b>` : p.x).join(' '); a = 1; dy = 0; }
           else { html = pal.map(p => `<span class="${p.dicha ? 'd' : ''}${p.r ? ' r' : ''}">${p.x}</span>`).join(''); dy = 0; es = .9 + .1 * eo(u); }
         }

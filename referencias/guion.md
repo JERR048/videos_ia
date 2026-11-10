@@ -115,6 +115,9 @@ entregues uno solo.
 - Como mucho una `*palabra*` resaltada por trozo.
 - `["lo que se lee", "lo que se dice"]` sirve para números, horas y siglas.
 - La voz se pide por escena: si corriges una escena, solo esa vuelve a gastar caracteres.
+- **En `karaoke`, un trozo de más de 16 letras se parte en dos renglones.** Divídelo en dos trozos. Repartir de otra
+  forma los trozos de una escena no cambia su texto, así que no vuelve a gastar voz; solo hay que revisar los índices
+  de `c('escena', n)` en la escena.
 
 ## 5. La marca y las voces: `marca.json`
 
