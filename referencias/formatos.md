@@ -27,7 +27,10 @@ Mandan sobre la tabla. Si otra persona usa esta habilidad, puede ignorar esta se
   - Un diálogo o una explicación se pueden hacer con la mascota sola como presentadora (`anuncio-robotv.js`).
   - Las personas dibujadas en 2D del cuento sí valen: las pidió por nombre («el de dibujos»).
   - Por prudencia, tampoco figuras pequeñas en 3D (`k.crearMultitud`, `k.crearPersona`) mientras no diga otra cosa.
-- **Estilos que quiere:** videojuego, cuento con dibujos y 3D (mundo en miniatura, o la mascota con objetos).
+- **Su favorito es el anuncio de producto en 3D claro** (el celular, el panel y la mascota). Tras ver los formatos
+  de redes dijo que le gustaban más esos «con las nuevas voces» y pidió diez más con otras bondades del manual. Es el
+  formato por defecto para su marca, sin las personas sentadas de los ejemplos viejos.
+- **Otros estilos que acepta:** videojuego, cuento con dibujos y 3D (mundo en miniatura, o la mascota con objetos).
 - **Alternar la voz de hombre y la de mujer** entre un video y otro (`locutor` y `locutora`).
 - **Cada videojuego se ve distinto:** plataformas, tablero de misión, pelea de jefe, portales. No repetir el mismo
   nivel con otro texto.

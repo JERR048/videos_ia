@@ -33,6 +33,12 @@ y las cinco pruebas de formato (10 de noviembre de 2026). Para un solo video cor
 - **Diez constructores a la vez funcionaron** (10 de noviembre de 2026) con 12 cuadros por corrida y un render largo
   al mismo tiempo: unos 25 minutos por video. Los arreglos comunes (una letra, el volumen) se aplican al motor
   cuando todos acaban y se vuelve a armar todo.
+- **Diez a la vez pueden agotar el límite de uso del modelo.** Pasó el 10 de noviembre de 2026: los diez
+  constructores se cortaron a mitad. El trabajo queda en disco (escenas casi completas, hojas de una ronda), así que
+  se relanzan en tandas de unos cinco con un encargo corto: «tu archivo ya existe, léelo y continúa». Guarda los
+  encargos completos en un archivo (`ENCARGOS-….md`) para no tener que reescribirlos al relanzar.
+- **Para anuncios de producto, parte de los ejemplos del mismo estilo** (`kit/ejemplos/anuncio-0N.js`) y prohíbe en el
+  encargo copiar sus figuras humanas si el dueño no las quiere.
 - **Di en el encargo cómo debe verse distinto cada video** del mismo formato: lugar, paleta, mecánica.
 - **Parte de un video terminado del mismo formato:** copiarlo y extenderlo rinde más que empezar de cero.
 - **No edites el motor mientras otros lo usan.** Los cambios del kit se hacen antes de repartir o cuando todos acaban.
