@@ -15,6 +15,7 @@ import numpy as np
 sys.stdout.reconfigure(encoding="utf-8")
 BASE = os.path.dirname(os.path.abspath(__file__))
 SR = 48000
+OBJETIVO_LUFS = -15.0
 rng = np.random.default_rng(7)
 
 
@@ -129,15 +130,15 @@ def rms_pico(x, ventana=.05):
 
 
 def sonoridad(x):
-    """Sonoridad integrada (LUFS) de una señal mono, medida con el ebur128 de ffmpeg. None si no se pudo medir."""
+    """Sonoridad integrada (LUFS) de la mezcla, medida en estéreo con el ebur128 de ffmpeg. None si no se pudo medir."""
     ff = os.environ.get("FFMPEG") or shutil.which("ffmpeg") or "ffmpeg"
     tmp = os.path.join(tempfile.gettempdir(), "sonido-medir-%d.wav" % os.getpid())
     try:
         w = wave.open(tmp, "wb")
-        w.setnchannels(1)
+        w.setnchannels(2)  # en estéreo, como sale la mezcla: el mismo audio en mono mide 3 LU menos
         w.setsampwidth(2)
         w.setframerate(SR)
-        w.writeframes((np.clip(x, -1, 1) * 32767).astype(np.int16).tobytes())
+        w.writeframes(np.repeat((np.clip(x, -1, 1) * 32767).astype(np.int16), 2).tobytes())
         w.close()
         e = subprocess.run([ff, "-hide_banner", "-nostats", "-i", tmp, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True, encoding="utf-8", errors="replace").stderr
         m = re.search(r"I:\s+(-?[\d.]+) LUFS", e[e.rfind("Summary:"):]) if "Summary:" in e else None
@@ -239,10 +240,10 @@ def mezclar(ad):
         mus = musica(tipo, n / SR, [(sc["voz"], sc["vozFin"]) for sc in tl["escenas"]])
         mus = mus / (np.sqrt(np.mean(mus ** 2)) + 1e-9) * nivel_voz * 10 ** (float(guion.get("musicaDb", -24)) / 20)
     mix = voz + fx + mus
-    # Sonoridad pareja entre voces: la mezcla se lleva a -16 LUFS (se mide con ffmpeg; entre -4 y +5 dB de ajuste).
+    # Sonoridad pareja entre voces: la mezcla se lleva a -15 LUFS (se mide con ffmpeg; entre -4 y +5 dB de ajuste).
     lufs = sonoridad(mix)
     if lufs is not None:
-        mix = mix * 10 ** (max(-4.0, min(5.0, -16.0 - lufs)) / 20)
+        mix = mix * 10 ** (max(-4.0, min(5.0, OBJETIVO_LUFS - lufs)) / 20)
     # limitador suave: lo que pasa de 0,55 se redondea hacia 0,72 (al comprimir a AAC el pico real sube más de 1 dB)
     u, techo = .55, .72
     m = np.abs(mix)
@@ -254,7 +255,7 @@ def mezclar(ad):
     w.writeframes(np.repeat((mix * 32767).astype(np.int16), 2).tobytes())
     w.close()
     print("%s: %d efectos %s%s, %s -> build/%s/mezcla.wav" % (ad, sum(cuenta.values()), cuenta, (", música «%s»" % tipo) if tipo else ", sin música",
-          ("de %.1f a -16 LUFS" % lufs) if lufs is not None else "sonoridad sin medir", ad))
+          ("de %.1f a %.0f LUFS" % (lufs, OBJETIVO_LUFS)) if lufs is not None else "sonoridad sin medir", ad))
 
 
 if len(sys.argv) < 2:

@@ -36,7 +36,7 @@ El tercer valor de `k.sonar(t, tipo, volumen)` multiplica el nivel (1 por defect
 - El efecto cae en el mismo cuadro que la imagen, o hasta 3 cuadros antes de la palabra. Nunca después.
 - **Música** (opcional, en el guion): `"musica": "pad"` es un colchón de acordes; `"pulso"` le suma un bombo suave.
   Va a −24 dB bajo la voz (`"musicaDb"` lo cambia) y baja 3,5 dB mientras hay voz.
-- **La mezcla se lleva sola a −16 LUFS** (se mide con ffmpeg): así una voz de hombre y una de mujer quedan al mismo
+- **La mezcla se lleva sola a −15 LUFS** (se mide en estéreo con ffmpeg): así una voz de hombre y una de mujer quedan al mismo
   volumen. Después pasa por un limitador suave: el pico queda por debajo de −3 dBTP al comprimir.
 
 **Cómo se arma.** `armar.sh` lo hace solo. A mano:

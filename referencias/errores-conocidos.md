@@ -32,7 +32,7 @@ Cada fila costó tiempo una vez. Búscala aquí antes de depurar.
 | `guion.py` no alinea (N/M) | Signos o números que la voz lee distinto | Usa `["se lee", "se dice"]` en ese trozo |
 | La voz dice mal la marca | La lee como está escrita | `marca.json → voz.pronunciacion`; comprueba con Whisper |
 | Tras cambiar la voz, algo queda cortado al final de una escena | La voz nueva es más rápida | Alarga `despues` de esa escena hasta recuperar el margen |
-| Un video sale más bajo que otro (−18 LUFS) | Cada voz de ElevenLabs tiene su volumen; la de hombre salía más baja | `sonido.py` ya lleva la mezcla a −16 LUFS; vuelve a correr `armar.sh` |
+| Un video sale más bajo que otro (−18 LUFS) | Cada voz de ElevenLabs tiene su volumen; la de hombre salía más baja | `sonido.py` ya lleva la mezcla a −15 LUFS; vuelve a correr `armar.sh`. Ojo al medir: el mismo audio en mono mide 3 LU menos que en estéreo |
 | El pico de audio pasa de −1 dBTP en el MP4 | Recomprimir el audio AAC una segunda vez puede subir el pico más de 3 dB | `armar.sh` ya copia el audio del render sin recomprimirlo y `sonido.py` trae un limitador suave; si mezclas a mano, deja 3 dB de margen |
 | Silencio de más de 0,6 s en medio | Pausas `antes` + `despues` largas entre escenas | Bájalas a 0,1–0,2 s |
 | faster-whisper falla con `metadata_errors` | El PyAV instalado no es compatible | Pásale el audio como arreglo de numpy, leído con ffmpeg |
